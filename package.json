@@ -1,0 +1,9 @@
+{
+  "name": "dashboard-monorepo",
+  "private": true,
+  "devDependencies": {},
+  "workspaces": [
+    "dashboard-fe",
+    "dashboard-be"
+  ]
+}

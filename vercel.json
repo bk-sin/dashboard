@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "projects": [
+    {
+      "src": "dashboard-fe/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "dashboard-be/package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "builds": [
+    {
+      "src": "dashboard-fe/next.config.ts",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "dashboard-be/src/main.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "dashboard-be/src/main.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dashboard-fe/$1"
+    }
+  ]
+}
